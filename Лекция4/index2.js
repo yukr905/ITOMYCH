@@ -2,7 +2,7 @@ function multiply(num1,num2){
     let res = num1*num2
     console.log(res)
     return function(num){
-        console.log(num*num)
+        console.log(num*2)
         return function(num){
             return Math.pow(num,2)
         }
