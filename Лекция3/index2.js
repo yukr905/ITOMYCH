@@ -1,5 +1,6 @@
 import * as readline from 'readline'
 import { stdin as input, stdout as output } from 'process'
+import { Console } from 'console';
 
 const rI = readline.createInterface({ input, output });
 let map = new Map()
@@ -39,15 +40,53 @@ rI.on('line', (input) => {
             res1 += result[i]
         }
     }
-    tmp = map.get(res)+map.get(res1)
+    for(let i =0 ;i<2;i++){
+            if(res.length>1){
+                if(map.has(res[0]+res[1])){     
+                    tmp += map.get(res[0]+res[1])
+                    res =""
+                }else{
+                    tmp +=map.get(res[i])
+                }
+            }else{
+                if(res[i]===undefined){
+                    break
+                }
+                tmp +=map.get(res[i])
+            }
+    }
+    for(let i =0 ;i<2;i++){
+            if(res1.length>1){
+                if(map.has(res1[0]+res1[1])){
+                    tmp += map.get(res1[0]+res1[1])
+                    res1= ""
+                }else{
+                    tmp +=map.get(res1[i])    
+                }
+            }else{
+                if(res1[i]===undefined){
+                    break
+                }
+                tmp +=map.get(res1[i])
+            }
+    }
     res=""
-    for(let i = 0;i<map.size;i++){
-        for(let key of map.keys()){
-            if(tmp>=map.get(key)){
-                tmp= tmp -map.get(key)
-                res += key
-            }      
+    console.log(tmp)
+    while(tmp){
+        for(let i = 0;i<map.size;i++){
+            for(let key of map.keys()){
+                if(tmp === 0){
+                    break
+                }
+                if(tmp>=map.get(key)){
+                    tmp= tmp -map.get(key)
+                    res += key
+                    break
+                }      
+            }
         }
     }
     console.log(`Result: ${res}`)
 });
+
+//res[0]+res[1] == "IV"||"IX"||"XL"||"XC"||"CD"||"CM"
