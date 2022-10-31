@@ -1,13 +1,11 @@
 function multiply(num1,num2){
-    let res = num1*num2
-    console.log(res)
-    return function(num){
-        console.log(num*2)
-        return function(num){
-            return Math.pow(num,2)
-        }
-    }
+    return num1*num2
 }
-let double = multiply(5,10)
-let square = double(6)
-console.log(square(9))
+function double(func){
+    return func*2
+}
+function square(func){
+    return Math.pow(func,2)
+}
+console.log(double(multiply(5,5)))
+console.log(square(multiply(4,3)))
