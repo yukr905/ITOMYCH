@@ -1,6 +1,6 @@
 import * as readline from 'readline'
 import { stdin as input, stdout as output } from 'process'
-import { Console } from 'console';
+
 
 const rI = readline.createInterface({ input, output });
 let map = new Map()
