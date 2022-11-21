@@ -4,7 +4,7 @@ import { timetable } from './timetable.js';
 
 const rl = readline.createInterface({ input, output })
 
-async function readTerminalInput() {
+async function checktimatable() {
 
   rl.question("Write day of the weak  " , (input)=>{
     console.log(timetable.find((daySchedule) => daySchedule.day === input.toLowerCase()))
@@ -12,9 +12,9 @@ async function readTerminalInput() {
       if(input == "EXIT"){
         return console.log("By")
       }else{
-        readTerminalInput()
+        checktimatable()
       }
     })
   })
 }
-readTerminalInput()
+checktimatable()
