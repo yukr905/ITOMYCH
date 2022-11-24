@@ -5,7 +5,7 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "outFile": "./build/index3.js",
-        "sourceMap": true
+        "sourceMap": true,  
     },
-    "include": ["*"]
+    "include": ["*"],
 }
