@@ -1,7 +1,7 @@
 const nerdamer = require("nerdamer")
 
 
-function productOfTwoPolynomials(str1: string, str2: string): string {
+function polynow(str1: string, str2: string): string {
   const result = nerdamer(`expand((${str1})(${str2}))`)
     .toString()
     .split('')
@@ -10,4 +10,4 @@ function productOfTwoPolynomials(str1: string, str2: string): string {
   return result
 }
 
-console.log(productOfTwoPolynomials("x+1","x-1"))
+console.log(polynow("x+1","x-1"))
