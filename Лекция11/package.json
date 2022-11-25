@@ -1,0 +1,16 @@
+{
+  "name": "lecture11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start2ts": "ts-node index2.ts",
+    "build": "tsc",
+    "start2": "node ./build/index2.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
